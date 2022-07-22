@@ -7,6 +7,10 @@ microIoT.microIoT_MQTT_Event(microIoT.TOPIC.topic_0, function on_microiot_mqtt_t
         basic.showIcon(IconNames.Yes)
     } else if (message == "no") {
         basic.showIcon(IconNames.No)
+    } else if (message == "door open") {
+        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 0)
+    } else if (message == "door close") {
+        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 90)
     } else {
         basic.showLeds(`
             . # # # .

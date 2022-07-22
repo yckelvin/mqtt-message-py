@@ -7,6 +7,10 @@ def on_microiot_mqtt_topic_0(message):
         basic.show_icon(IconNames.YES)
     elif message == "no":
         basic.show_icon(IconNames.NO)
+    elif message == "door open":
+        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 0)
+    elif message == "door close":
+        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 90)
     else:
         basic.show_leds("""
             . # # # .
